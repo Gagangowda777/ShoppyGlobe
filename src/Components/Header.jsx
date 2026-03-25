@@ -21,7 +21,7 @@ function Header() {
                 <IoCart />   
             </button>
             <button>
-                <CgProfile />
+                <CgProfile /> 
             </button>
         </div>
 

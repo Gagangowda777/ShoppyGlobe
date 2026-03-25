@@ -1,12 +1,13 @@
-import Header from "./Components/Header"
+import Header from "./Components/Header";
+import ProductList from "./Components/ProductList";
 
 function App() {
   return (
     <div>
-      <Header/>
-      
+      <Header />
+      <ProductList/>
     </div>
-  )
+  );
 }
 
 export default App

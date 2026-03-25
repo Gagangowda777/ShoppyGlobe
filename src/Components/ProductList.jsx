@@ -1,10 +1,10 @@
-
+import ProductItem from "./ProductItem"
 
 function ProductList() {
-    
+
   return (
     <div>
-      
+        <ProductItem/>
     </div>
   )
 }
