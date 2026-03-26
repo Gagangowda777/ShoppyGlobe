@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import useProduct from "../utils/useProduct"
+import { selectFilteredProducts, selectSearchTerm } from "../products/productSelector"
 
 function ProductItem() {
-  const {products, loading, error} = useProduct('https://dummyjson.com/products')
-  
+  const { loading, error } = useProduct('https://dummyjson.com/products')
+  const filteredProducts = useSelector(selectFilteredProducts)
+  const searchTerm = useSelector(selectSearchTerm)
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -18,10 +22,19 @@ function ProductItem() {
       </div>
     )
   }
-  
+
+  if (filteredProducts.length === 0 && searchTerm) {
+    return (
+      <div className="flex flex-col justify-center items-center h-64 gap-2">
+        <p className="text-gray-500 text-lg">No products found for "{searchTerm}"</p>
+        <p className="text-gray-400 text-sm">Try a different search term</p>
+      </div>
+    )
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-12">
-      {products.map((product) => (
+      {filteredProducts.map((product) => (
         <div key={product.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
           <div className="flex justify-center">
             <img

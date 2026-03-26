@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react"
-
+import { useDispatch } from "react-redux"
+import { setProducts as setStoreProducts } from "../products/productSlice"
 
 function useProduct(api) {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, seterror] = useState(null)
+  const dispatch = useDispatch()
 
     useEffect(()=>{
         async function fetchAPI(){
             try{
                 const response = await fetch(api);
                 const data = await response.json()
-                setProducts(Array.isArray(data) ? data : data.products || [])
+                const productList = Array.isArray(data) ? data : data.products || []
+                setProducts(productList)
+                dispatch(setStoreProducts(productList))
             }
             catch(err){
                 seterror(err)

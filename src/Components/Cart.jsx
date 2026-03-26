@@ -5,7 +5,6 @@ import { removeFromCart } from "../cart/cartSlice";
 const Cart = () => {
   const dispatch = useDispatch();
   const items = useSelector(selectCartItems);
-  const total = useSelector(selectCartTotal);
 
   return (
     <div>
