@@ -1,7 +1,10 @@
 import { useParams } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { addToCart } from "../cart/cartSlice";
 import useProduct from '../utils/useProduct';
 
 function ProductDetal() {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const { products, loading, error } = useProduct('https://dummyjson.com/products');
   const product = products.find((p) => p.id === Number(id));
@@ -47,7 +50,7 @@ function ProductDetal() {
               <span className="text-sm text-gray-500">Rating: {product.rating}</span>
             </div>
 
-            <button className="border border-gray-600 rounded-xl p-2 mt-2 hover:bg-black hover:text-white">
+            <button onClick={() => dispatch(addToCart(product))} className="border border-gray-600 rounded-xl p-2 mt-2 hover:bg-black hover:text-white">
               Add to Cart
             </button>
           </div>

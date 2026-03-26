@@ -1,6 +1,7 @@
 import { IoCart } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { CiSearch } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -17,9 +18,9 @@ function Header() {
         </div>
     {/* cart and profile icon */}
         <div className="flex flex-row text-2xl gap-6 shrink-0">
-            <button className="hover:text-gray-600 transition-colors duration-200">
+            <Link to="/cart" className="hover:text-gray-600 transition-colors duration-200">
                 <IoCart />
-            </button>
+            </Link>
             <button className="hover:text-gray-600 transition-colors duration-200">
                 <CgProfile />
             </button>
