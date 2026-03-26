@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useProduct from "../utils/useProduct"
 
 function ProductItem() {
@@ -33,6 +34,9 @@ function ProductItem() {
             <p className="text-xl font-bold mb-2">${product.price}</p>
             <p className="text-sm text-gray-600 mb-2 line-clamp-2">{product.description}</p>
             <p className="text-sm text-gray-500">Rating: {product.rating}</p>
+            <Link to={`/product/${product.id}`}>
+              <button className="border border-gray-600 rounded-xl p-2 mt-2 hover:bg-black hover:text-white">View Item</button>
+            </Link>
           </div>
         </div>
       ))}
