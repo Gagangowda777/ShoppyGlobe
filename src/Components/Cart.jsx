@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import {selectCartItems,selectCartTotal} from "../cart/cartSelector";
+import {selectCartItems} from "../cart/cartSelector";
 import { removeFromCart } from "../cart/cartSlice";
 
 const Cart = () => {
@@ -8,21 +8,16 @@ const Cart = () => {
 
   return (
     <div>
-      <h2>Cart</h2>
-
       {items.map((item) => (
         <div key={item.id}>
           <h4>{item.title}</h4>
           <p>
-            {item.quantity} × ₹{item.price}
+            {item.quantity} x ₹{item.price}
           </p>
 
-          <button
-            onClick={() => dispatch(removeFromCart(item.id))}
-          >
-            Remove
-          </button>
+          <button onClick={() => dispatch(removeFromCart(item.id))}> Remove </button>
         </div>
+        
       ))}
 
     </div>
