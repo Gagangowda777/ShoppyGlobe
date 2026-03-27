@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import useProduct from "../utils/useProduct"
 import { selectFilteredProducts, selectSearchTerm } from "../products/productSelector"
+import { addToCart } from "../cart/cartSlice";
 
 function ProductItem() {
   const { loading, error } = useProduct('https://dummyjson.com/products')
   const filteredProducts = useSelector(selectFilteredProducts)
   const searchTerm = useSelector(selectSearchTerm)
+  const dispatch = useDispatch()
 
   if (loading) {
     return (
@@ -47,9 +49,16 @@ function ProductItem() {
             <p className="text-xl font-bold mb-2">${product.price}</p>
             <p className="text-sm text-gray-600 mb-2 line-clamp-2">{product.description}</p>
             <p className="text-sm text-gray-500">Rating: {product.rating}</p>
-            <Link to={`/product/${product.id}`}>
-              <button className="border border-gray-600 rounded-xl p-2 mt-2 hover:bg-black hover:text-white">View Item</button>
-            </Link>
+            <div className="flex gap-2 mt-2">
+              <Link to={`/product/${product.id}`}>
+                <button className="border border-gray-600 rounded-xl p-2 hover:bg-black hover:text-white">View Item</button>
+              </Link>
+              <button 
+                onClick={() => dispatch(addToCart(product))}
+                className="border border-gray-600 rounded-xl p-2 hover:bg-black hover:text-white">
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
       ))}
