@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { setProducts as setStoreProducts } from "../products/productSlice"
 
+// custom hook to fectch data ffrom api 
 function useProduct(api) {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
