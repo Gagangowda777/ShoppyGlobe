@@ -42,7 +42,8 @@ function ProductItem() {
             <img
               src={product.thumbnail}
               alt={product.title}
-              className="w-60 h-56 object-cover rounded-t-lg "/>
+              className="w-60 h-56 object-cover rounded-t-lg "
+              loading="lazy"/>
           </div>
           <div className="p-4">
             <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.title}</h3>

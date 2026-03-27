@@ -38,7 +38,7 @@ function ProductDetal() {
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
         <div className="md:flex">
           <div className="md:shrink-0">
-            <img src={product.thumbnail} alt={product.title} className="w-full h-96 object-cover md:w-96" />
+            <img src={product.thumbnail} alt={product.title} className="w-full h-96 object-cover md:w-96" loading="lazy"/>
           </div>
 
           <div className="p-8">

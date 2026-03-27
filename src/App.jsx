@@ -1,12 +1,14 @@
+import React, { Suspense } from 'react';
 import { Routes, Route, Outlet } from 'react-router-dom';
-import Header from "./Components/Header";
-import ProductList from "./Components/ProductList";
-import ProductDetal from "./Components/ProductDetal";
-import Cart from "./Components/Cart";
-import ErrorPage from "./Components/ErrorPage";
-import CheckOut from './Components/CheckOut';
 
-// Create a layout component that includes the Header
+const Header = React.lazy(() => import("./Components/Header"));
+const ProductList = React.lazy(() => import("./Components/ProductList"));
+const ProductDetal = React.lazy(() => import("./Components/ProductDetal"));
+const Cart = React.lazy(() => import("./Components/Cart"));
+const ErrorPage = React.lazy(() => import("./Components/ErrorPage"));
+const CheckOut = React.lazy(() => import('./Components/CheckOut'));
+
+
 const Layout = () => (
   <>
     <Header />
@@ -17,15 +19,17 @@ const Layout = () => (
 function App() {
   return (
     <div>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<ProductList />} />
-          <Route path="/product/:id" element={<ProductDetal />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<CheckOut />} />
-        </Route>
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+      <Suspense fallback={<div className="flex justify-center items-center h-screen"><p className="text-xl">Loading...</p></div>}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<ProductList />} />
+            <Route path="/product/:id" element={<ProductDetal />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<CheckOut />} />
+          </Route>
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
