@@ -26,13 +26,27 @@ const cartSlice = createSlice({
       );
     },
 
+    incrementQuantity: (state, action) => {
+      const item = state.items.find((item) => item.id === action.payload);
+      if (item) {
+        item.quantity += 1;
+      }
+    },
+
+    decrementQuantity: (state, action) => {
+      const item = state.items.find((item) => item.id === action.payload);
+      if (item && item.quantity > 1) {
+        item.quantity -= 1;
+      }
+    },
+
     clearCart: (state) => {
       state.items = [];
     },
   },
 });
 
-export const { addToCart, removeFromCart, clearCart } =
+export const { addToCart, removeFromCart, clearCart, incrementQuantity, decrementQuantity } =
   cartSlice.actions;
 
 export default cartSlice.reducer;
