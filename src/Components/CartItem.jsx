@@ -5,12 +5,12 @@ function CartItem({ item }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex items-center justify-between p-4 border rounded-xl shadow-sm bg-white hover:shadow-md transition-shadow">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 border rounded-xl shadow-sm bg-white hover:shadow-md transition-shadow gap-4 sm:gap-0">
       <div>
         <h4 className="text-lg font-semibold text-gray-800">{item.title}</h4>
         <p className="text-gray-600 mt-1"> ₹{item.price} </p>
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center justify-between w-full sm:w-auto gap-4 sm:gap-6">
         <div className="flex items-center gap-3">
           <button 
             onClick={() => dispatch(decrementQuantity(item.id))}

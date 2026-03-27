@@ -22,9 +22,9 @@ function CheckOut() {
   };
 
   return (
-    <div className='flex flex-col md:flex-row justify-center items-start gap-8 p-4 md:p-8 bg-gray-50 min-h-screen'>
+    <div className='flex flex-col lg:flex-row justify-center items-start gap-6 md:gap-8 p-4 md:p-8 bg-gray-50 min-h-screen'>
       {/* Checkout Form */}
-      <form onSubmit={handlePlaceOrder} className='flex flex-col gap-4 bg-white p-6 rounded-xl shadow-md w-full max-w-lg'>
+      <form onSubmit={handlePlaceOrder} className='flex flex-col gap-4 bg-white p-4 sm:p-6 rounded-xl shadow-md w-full max-w-lg mx-auto lg:mx-0'>
         <h2 className="text-2xl font-bold mb-2">Checkout Details</h2>
         <div className="flex flex-col">
           <label className="mb-2 font-semibold" htmlFor="name">Name : </label>
@@ -50,13 +50,13 @@ function CheckOut() {
           <label className="mb-2 font-semibold" htmlFor="zip">Zip Code : </label>
           <input className="border border-gray-300 rounded-xl p-2 " type="text" placeholder='Zip Code' id='zip' required />
         </div> 
-        <button className="bg-blue-600 text-white rounded-xl p-3 mt-4 hover:bg-blue-700 font-bold transition-colors" type='submit'>
+        <button className="border border-gray-600 rounded-xl p-2 hover:bg-black hover:text-white" type='submit'>
           Place Order
         </button>
       </form>
 
       {/* Order Summary */}
-      <div className='bg-white p-6 rounded-xl shadow-md w-full max-w-md h-fit'>
+      <div className='bg-white p-4 sm:p-6 rounded-xl shadow-md w-full max-w-lg lg:max-w-md h-fit mx-auto lg:mx-0 mt-6 lg:mt-0'>
         <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
         {cartItems.length > 0 ? (
           <div className="flex flex-col gap-4">

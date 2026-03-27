@@ -34,14 +34,14 @@ function ProductDetal() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-        <div className="md:flex">
-          <div className="md:shrink-0">
-            <img src={product.thumbnail} alt={product.title} className="w-full h-96 object-cover md:w-96" loading="lazy"/>
+        <div className="flex flex-col md:flex-row">
+          <div className="md:shrink-0 w-full md:w-96">
+            <img src={product.thumbnail} alt={product.title} className="w-full h-64 sm:h-80 md:h-96 object-cover md:w-96" loading="lazy"/>
           </div>
 
-          <div className="p-8">
+          <div className="p-6 md:p-8 flex-1">
             <h1 className="text-3xl font-bold text-gray-800 mb-4">{product.title}</h1>
             <p className="text-xl font-bold text-gray-900 mb-4">${product.price}</p>
             <p className="text-gray-600 mb-4">{product.description}</p>
