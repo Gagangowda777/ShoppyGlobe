@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import { addToCart } from "../cart/cartSlice";
+import { addToCart } from "../utils/cartSlice";
 import useProduct from '../utils/useProduct';
 
 function ProductDetal() {

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import useProduct from "../utils/useProduct"
-import { selectFilteredProducts, selectSearchTerm } from "../products/productSelector"
-import { addToCart } from "../cart/cartSlice";
+import { selectFilteredProducts, selectSearchTerm } from "../utils/productSelector"
+import { addToCart } from "../utils/cartSlice";
 
 function ProductItem() {
   const { loading, error } = useProduct('https://dummyjson.com/products')

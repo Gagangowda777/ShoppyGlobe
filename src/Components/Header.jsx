@@ -3,9 +3,9 @@ import { CgProfile } from "react-icons/cg";
 import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchTerm } from "../products/productSlice";
-import { selectSearchTerm } from "../products/productSelector";
-import { selectCartCount } from "../cart/cartSelector";
+import { setSearchTerm } from "../utils/productSlice";
+import { selectSearchTerm } from "../utils/productSelector";
+import { selectCartCount } from "../utils/cartSelector";
 
 function Header() {
   const dispatch = useDispatch();

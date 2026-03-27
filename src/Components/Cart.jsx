@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectCartItems, selectCartTotal } from "../cart/cartSelector";
+import { selectCartItems, selectCartTotal } from "../utils/cartSelector";
 import CartItem from "./CartItem";
 
 const Cart = () => {

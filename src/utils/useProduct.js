@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { setProducts as setStoreProducts } from "../products/productSlice"
+import { setProducts as setStoreProducts } from "./productSlice"
 
 // custom hook to fectch data ffrom api 
 function useProduct(api) {
