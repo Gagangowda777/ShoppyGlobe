@@ -4,6 +4,7 @@ import ProductList from "./Components/ProductList";
 import ProductDetal from "./Components/ProductDetal";
 import Cart from "./Components/Cart";
 import ErrorPage from "./Components/ErrorPage";
+import CheckOut from './Components/CheckOut';
 
 // Create a layout component that includes the Header
 const Layout = () => (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<ProductList />} />
           <Route path="/product/:id" element={<ProductDetal />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<CheckOut />} />
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
