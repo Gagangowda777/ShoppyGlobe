@@ -28,27 +28,27 @@ function CheckOut() {
         <h2 className="text-2xl font-bold mb-2">Checkout Details</h2>
         <div className="flex flex-col">
           <label className="mb-2 font-semibold" htmlFor="name">Name : </label>
-          <input className="border border-gray-300 rounded-xl p-2 focus:outline-blue-500" type="text" placeholder='Full Name' id='name' required />
+          <input className="border border-gray-300 rounded-xl p-2 " type="text" placeholder='Full Name' id='name' required />
         </div>
         <div className="flex flex-col">
           <label className="mb-2 font-semibold" htmlFor="email">Email : </label>
-          <input className="border border-gray-300 rounded-xl p-2 focus:outline-blue-500" type="email" placeholder='Email Address' id='email' required />
+          <input className="border border-gray-300 rounded-xl p-2 " type="email" placeholder='Email Address' id='email' required />
         </div>
         <div className="flex flex-col">
           <label className="mb-2 font-semibold" htmlFor="address">Address : </label>
-          <input className="border border-gray-300 rounded-xl p-2 focus:outline-blue-500" type="text" placeholder='Street Address' id='address' required />
+          <input className="border border-gray-300 rounded-xl p-2 " type="text" placeholder='Street Address' id='address' required />
         </div>
         <div className="flex flex-col">
           <label className="mb-2 font-semibold" htmlFor="city">City : </label>
-          <input className="border border-gray-300 rounded-xl p-2 focus:outline-blue-500" type="text" placeholder='City' id='city' required />
+          <input className="border border-gray-300 rounded-xl p-2 " type="text" placeholder='City' id='city' required />
         </div>
         <div className="flex flex-col">
           <label className="mb-2 font-semibold" htmlFor="state">State : </label>
-          <input className="border border-gray-300 rounded-xl p-2 focus:outline-blue-500" type="text" placeholder='State' id='state' required />
-        </div>
+          <input className="border border-gray-300 rounded-xl p-2 " type="text" placeholder='State' id='state' required />
+        </div>  
         <div className="flex flex-col">
           <label className="mb-2 font-semibold" htmlFor="zip">Zip Code : </label>
-          <input className="border border-gray-300 rounded-xl p-2 focus:outline-blue-500" type="text" placeholder='Zip Code' id='zip' required />
+          <input className="border border-gray-300 rounded-xl p-2 " type="text" placeholder='Zip Code' id='zip' required />
         </div> 
         <button className="bg-blue-600 text-white rounded-xl p-3 mt-4 hover:bg-blue-700 font-bold transition-colors" type='submit'>
           Place Order
@@ -63,10 +63,8 @@ function CheckOut() {
             {cartItems.map((item) => (
               <div key={item.id} className="flex justify-between items-center border-b pb-3">
                 <div className="flex items-center gap-3">
-                  <img src={item.thumbnail} alt={item.title} className="w-12 h-12 object-cover rounded-md border" />
                   <div>
-                    <h4 className="font-semibold text-gray-800 text-sm line-clamp-1">{item.title}</h4>
-                    <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
+                    <h4 className="font-semibold text-gray-800 text-sm line-clamp-1">{item.title} x {item.quantity}</h4>
                   </div>
                 </div>
                 <p className="font-semibold text-gray-800 shrink-0">₹{item.price * item.quantity}</p>
@@ -78,7 +76,7 @@ function CheckOut() {
             </div>
           </div>
         ) : (
-          <p className="text-gray-500">Your cart is empty.</p>
+          <p>Your cart is empty.</p>
         )}
       </div>
     </div>

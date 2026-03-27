@@ -21,13 +21,13 @@ function CartItem({ item }) {
           <span className="font-semibold text-lg w-6 text-center">{item.quantity}</span>
           <button 
             onClick={() => dispatch(incrementQuantity(item.id))}
-            className="w-8 h-8 flex items-center justify-center rounded border border-gray-400 text-gray-800 shadow-sm hover:bg-gray-100 hover:border-gray-500 transition-colors">
+            className="w-8 h-8 flex items-center justify-center rounded border border-gray-400 text-gray-800 shadow-sm hover:bg-gray-100 hover:border-gray-500">
             +
           </button>
         </div>
         <button 
           onClick={() => dispatch(removeFromCart(item.id))}
-          className="px-4 py-2 border border-red-500 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-colors font-semibold shadow-sm">
+          className="px-4 py-2 border border-red-500 bg-red-600 text-white rounded-xl hover:bg-red-700">
           Delete
         </button>
       </div>
