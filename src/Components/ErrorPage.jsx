@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// this page displays if the url does not exist 
 function ErrorPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] bg-gray-50 px-4">

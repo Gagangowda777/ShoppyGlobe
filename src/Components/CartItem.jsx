@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { removeFromCart, incrementQuantity, decrementQuantity } from "../utils/cartSlice";
 
+// each item redender here which is displayed in cart page
 function CartItem({ item }) {
   const dispatch = useDispatch();
 
@@ -12,6 +13,7 @@ function CartItem({ item }) {
       </div>
       <div className="flex items-center justify-between w-full sm:w-auto gap-4 sm:gap-6">
         <div className="flex items-center gap-3">
+          {/* btn to decrease quantity */}
           <button 
             onClick={() => dispatch(decrementQuantity(item.id))}
             disabled={item.quantity <= 1}
@@ -19,12 +21,14 @@ function CartItem({ item }) {
               -
           </button>
           <span className="font-semibold text-lg w-6 text-center">{item.quantity}</span>
+          {/* btn to increase quantity */}
           <button 
             onClick={() => dispatch(incrementQuantity(item.id))}
             className="w-8 h-8 flex items-center justify-center rounded border border-gray-400 text-gray-800 shadow-sm hover:bg-gray-100 hover:border-gray-500">
             +
           </button>
         </div>
+        {/* btn to delete entire item  */}
         <button 
           onClick={() => dispatch(removeFromCart(item.id))}
           className="px-4 py-2 border border-red-500 bg-red-600 text-white rounded-xl hover:bg-red-700">

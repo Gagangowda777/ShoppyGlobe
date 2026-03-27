@@ -9,6 +9,7 @@ function ProductDetal() {
   const { products, loading, error } = useProduct('https://dummyjson.com/products');
   const product = products.find((p) => p.id === Number(id));
 
+  // loading msg
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -16,7 +17,7 @@ function ProductDetal() {
       </div>
     );
   }
-
+  //error msg 
   if (error) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -24,7 +25,7 @@ function ProductDetal() {
       </div>
     );
   }
-
+  // product not found msg
   if (!product) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -32,7 +33,7 @@ function ProductDetal() {
       </div>
     );
   }
-
+// prduct details card
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">

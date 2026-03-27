@@ -24,7 +24,7 @@ function ProductItem() {
       </div>
     )
   }
-
+// msg if no products are found
   if (filteredProducts.length === 0 && searchTerm) {
     return (
       <div className="flex flex-col justify-center items-center h-64 gap-2">
@@ -33,7 +33,7 @@ function ProductItem() {
       </div>
     )
   }
-
+// product item cards
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 p-4 md:p-8 lg:p-12">
       {filteredProducts.map((product) => (

@@ -20,7 +20,7 @@ function Header() {
     // Header component with logo, search bar, cart and profile icons
     <div className="flex flex-col sm:flex-row justify-between items-center p-4 sm:p-6 bg-white shadow-md border-b border-gray-200 gap-4 sm:gap-6 sticky top-0 z-50">
     
-    {/* ShoppyGlobe logo */}
+    {/* ShoppyGlobe logo which also routes to home page  */}
       <Link to="/" className="shrink-0">
         <h1 className="text-2xl sm:text-3xl font-bold hover:opacity-80 transition-opacity">
           ShoppyGlobe

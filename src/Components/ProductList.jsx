@@ -1,5 +1,6 @@
 import ProductItem from "./ProductItem"
 
+//List of all product from the api
 function ProductList() {
 
   return (

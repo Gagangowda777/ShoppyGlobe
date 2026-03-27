@@ -3,19 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { selectCartItems, selectCartTotal } from '../utils/cartSelector';
 import { clearCart } from '../utils/cartSlice';
 
+// checkout page where their is a dummy form and checkout btn
 function CheckOut() {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // function to handle the order
   const handlePlaceOrder = (e) => {
     e.preventDefault();
     if (cartItems.length === 0) {
       alert("Your cart is empty!");
       return;
     }
-    // Display success message, clear cart, and navigate home
+    // shows alert that order is placed and clears the cart and returns to home page 
     alert("Order placed successfully!");
     dispatch(clearCart());
     navigate('/');
@@ -23,7 +25,8 @@ function CheckOut() {
 
   return (
     <div className='flex flex-col lg:flex-row justify-center items-start gap-6 md:gap-8 p-4 md:p-8 bg-gray-50 min-h-screen'>
-      {/* Checkout Form */}
+
+      {/*Form to get user details (dummy form) */}
       <form onSubmit={handlePlaceOrder} className='flex flex-col gap-4 bg-white p-4 sm:p-6 rounded-xl shadow-md w-full max-w-lg mx-auto lg:mx-0'>
         <h2 className="text-2xl font-bold mb-2">Checkout Details</h2>
         <div className="flex flex-col">
@@ -55,7 +58,7 @@ function CheckOut() {
         </button>
       </form>
 
-      {/* Order Summary */}
+      {/* Order details */}
       <div className='bg-white p-4 sm:p-6 rounded-xl shadow-md w-full max-w-lg lg:max-w-md h-fit mx-auto lg:mx-0 mt-6 lg:mt-0'>
         <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
         {cartItems.length > 0 ? (

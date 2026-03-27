@@ -5,6 +5,7 @@ const initialState = {
   searchTerm: "",
 };
 
+// product slice for managing product state
 const productSlice = createSlice({
   name: "products",
   initialState,

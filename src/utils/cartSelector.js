@@ -1,4 +1,4 @@
-
+// selectors for cart
 export const selectCartItems = (state) => state.cart.items;
 
 export const selectCartCount = (state) =>
