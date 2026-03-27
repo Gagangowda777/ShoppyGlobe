@@ -11,9 +11,9 @@ const Cart = () => {
       {items.length === 0 ? (
         <div className="flex justify-center items-center h-64">
           <p className="text-gray-500 text-xl">Your cart is empty.</p>
-        </div>
-      ) : (
-        <div className="flex flex-col gap-4">
+        </div>) 
+      : 
+      (<div className="flex flex-col gap-4">
           {items.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
@@ -23,4 +23,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Cart
